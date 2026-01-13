@@ -1,15 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7efe7;
+  --foreground: #2a1f1b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-evyra-ivory: #f7efe7; /* soft beige */
+  --color-evyra-shell: #f8ddd7; /* shell pink */
+  --color-evyra-rose: #f1c0c7; /* blush rose */
+  --color-evyra-forest: #b46f7a; /* dusty rose accent */
+  --color-evyra-gold: #c19a6b; /* muted champagne gold */
+  --color-evyra-ink: #2a1f1b; /* deep warm brown */
+  --font-sans: var(--font-evyra-sans);
+  --font-display: var(--font-evyra-display);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +26,38 @@
 }
 
 body {
-  background: var(--background);
+  background: radial-gradient(
+    circle at top left,
+    #fdf4ea 0,
+    #f6e2d6 35%,
+    #f6c2cf 100%
+  );
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-evyra-sans), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-evyra-display), "Times New Roman", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hero-gradient-mask {
+  background: linear-gradient(
+    to right,
+    rgba(248, 221, 215, 0.7) 0%,
+    rgba(248, 221, 215, 0.6) 20%,
+    rgba(248, 221, 215, 0.35) 40%,
+    rgba(248, 221, 215, 0.16) 60%,
+    rgba(248, 221, 215, 0.05) 78%,
+    rgba(248, 221, 215, 0.01) 90%,
+    rgba(248, 221, 215, 0) 100%
+  );
+}
+
+.hero-image {
+  object-position: 75% center;
 }
