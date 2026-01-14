@@ -3,7 +3,29 @@
 import Image from "next/image";
 import Link from "next/link";
 import { featuredProducts } from "../lib/products";
-import { ProductCard } from "../components/product-card";
+
+const collections = [
+  {
+    id: "bridal-gowns",
+    name: "Bridal Gowns",
+    image: "/evylenga2.png",
+  },
+  {
+    id: "reception-dresses",
+    name: "Reception Dresses",
+    image: "/evydress.png",
+  },
+  {
+    id: "sangeet-mehendi",
+    name: "Sangeet & Mehendi",
+    image: "/evysari.png",
+  },
+  {
+    id: "accessories",
+    name: "Accessories",
+    image: "/evysari.png",
+  },
+];
 
 export default function Home() {
   return (
@@ -15,6 +37,7 @@ export default function Home() {
             alt="Soft bridal fabric backdrop"
             fill
             priority
+            unoptimized
             sizes="100vw"
             className="object-cover hero-image"
           />
@@ -51,9 +74,70 @@ export default function Home() {
               <p className="uppercase tracking-[0.2em]">Appointments</p>
               <p>By private viewing in New York & Mumbai.</p>
             </div>
-            <div>
-              <p className="uppercase tracking-[0.2em]">Lead time</p>
-              <p>10–14 weeks · artisan crafted.</p>
+                Shop jewellery
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-[calc(50%-50vw)] w-screen bg-evyra-ivory/95 px-6 py-12 md:px-10 md:py-16">
+        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-center">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-evyra-shell/40 shadow-[0_24px_70px_rgba(15,23,42,0.32)]">
+            <Image
+              src="/evyra-fabric2.png"
+              alt="Statement bridal jewellery styled on model"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              unoptimized
+              className="object-cover object-[60%_center]"
+            />
+          </div>
+
+          <div className="space-y-6">
+            <div className="space-y-3">
+              <p className="text-xs uppercase tracking-[0.24em] text-evyra-forest/70">
+                Couture fabric library
+              </p>
+              <h2 className="font-display text-3xl tracking-[0.22em] text-evyra-ink md:text-4xl">
+                SCULPTED IN SILK & TULLE
+              </h2>
+              <p className="text-sm leading-relaxed text-evyra-ink/80 md:text-base">
+                From whisper–light organza to hand–loomed silks, every Evyra gown
+                begins with rare fabrics sourced from small mills and dyed to our
+                own palette of shell, rose and ink.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-4">
+              <Link
+                href="/shop"
+                className="inline-flex items-center gap-2 rounded-full border border-evyra-forest/40 bg-evyra-forest px-7 py-3 text-xs font-medium uppercase tracking-[0.22em] text-evyra-ivory shadow-sm transition hover:bg-evyra-forest/95 hover:shadow-md"
+              >
+                Explore fabrics
+              </Link>
+              <p className="text-[0.7rem] uppercase tracking-[0.22em] text-evyra-ink/60">
+                Hand–loomed weaves · Silk–rich blends · Cloud–light layers
+              </p>
+            </div>
+
+            <div className="grid gap-4 text-xs text-evyra-ink/80 sm:grid-cols-3">
+              <div className="space-y-1">
+                <p className="uppercase tracking-[0.2em] text-evyra-forest/80">
+                  Sheer veils
+                </p>
+                <p>Airy tulles and nets that float with every step.</p>
+              </div>
+              <div className="space-y-1">
+                <p className="uppercase tracking-[0.2em] text-evyra-forest/80">
+                  Liquid silks
+                </p>
+                <p>Bias–cut satins that drape like water across the body.</p>
+              </div>
+              <div className="space-y-1">
+                <p className="uppercase tracking-[0.2em] text-evyra-forest/80">
+                  Textured layers
+                </p>
+                <p>Organza, jacquard and hand–quilted panels for volume.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -76,27 +160,81 @@ export default function Home() {
             View all pieces
           </Link>
         </div>
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-3">
           {featuredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <article key={product.id} className="group space-y-3">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-[2.25rem] bg-evyra-shell/40 shadow-[0_24px_80px_rgba(15,23,42,0.22)]">
+                {product.image && (
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    sizes="(min-width: 1024px) 22vw, (min-width: 768px) 30vw, 100vw"
+                    className="object-cover object-[50%_18%] transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
+                )}
+              </div>
+              <div className="space-y-1 text-center md:text-left">
+                <p className="text-[0.72rem] uppercase tracking-[0.28em] text-evyra-forest/70">
+                  {product.category}
+                </p>
+                <p className="font-display text-base tracking-tight text-evyra-ink">
+                  {product.name}
+                </p>
+              </div>
+            </article>
           ))}
         </div>
       </section>
 
-      <section className="mx-[calc(50%-50vw)] w-screen overflow-hidden">
-        <div className="mx-auto max-w-6xl px-6 pt-4 pb-3 md:px-10">
-          <p className="text-xs uppercase tracking-[0.24em] text-evyra-forest/70">
-            Film at Evyra
-          </p>
+      <section className="mx-[calc(50%-50vw)] w-screen bg-evyra-ivory/95 py-16 md:py-20">
+        <div className="mx-auto max-w-6xl space-y-24 px-6 md:space-y-32 md:px-10">
+          <div className="relative aspect-[21/9] overflow-hidden rajasthani-frame">
+            <video
+              src="/Bridal_Wear_Video_Generation.mp4"
+              className="absolute inset-0 h-full w-full object-cover evyra-film-video"
+              autoPlay
+              muted
+              playsInline
+              loop
+            />
+          </div>
+
+          <div className="space-y-6">
+            <div className="text-center">
+              <p className="text-xs uppercase tracking-[0.24em] text-evyra-forest/70">
+                Collections
+              </p>
+              <h2 className="font-display text-2xl tracking-tight text-evyra-ink md:text-3xl">
+                Explore our signature categories.
+              </h2>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-4">
+              {collections.map((collection) => (
+                <Link
+                  key={collection.id}
+                  href="/shop"
+                  className="group space-y-3"
+                >
+                  <div className="relative aspect-[3/4] overflow-hidden bg-evyra-shell/40 shadow-[0_24px_80px_rgba(15,23,42,0.18)]">
+                    <Image
+                      src={collection.image}
+                      alt={collection.name}
+                      fill
+                      sizes="(min-width: 1024px) 18vw, (min-width: 768px) 45vw, 100vw"
+                      className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                  <p className="text-center text-sm font-medium tracking-[0.18em] text-evyra-ink">
+                    {collection.name}
+                    <span className="ml-2">→</span>
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
-        <video
-          src="/Bridal_Wear_Video_Generation.mp4"
-          className="h-full w-full object-cover"
-          autoPlay
-          muted
-          playsInline
-          controls
-        />
       </section>
 
       <section
@@ -113,7 +251,7 @@ export default function Home() {
             </h2>
             <p className="text-sm leading-relaxed text-evyra-ink/75 md:text-base">
               Evyra works with small ateliers across India to bring heirloom
-              techniques—zardosi, aari, handloom weaving—into silhouettes that
+              techniques, zardosi, aari, handloom weaving, into silhouettes that
               move with you. From first sketch to final fitting, each gown is
               tailored to your rhythm, your ceremony, your version of forever.
             </p>
@@ -126,7 +264,7 @@ export default function Home() {
             </p>
             <p className="uppercase tracking-[0.2em]">Beyond the wedding day</p>
             <p>
-              Many pieces are designed to be restyled—shortened, layered or
+              Many pieces are designed to be restyled,shortened, layered or
               reworn for future celebrations.
             </p>
           </div>

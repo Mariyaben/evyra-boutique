@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Product } from "../lib/products";
 import { useCart } from "./cart-context";
 
@@ -12,6 +13,17 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <article className="group flex flex-col justify-between rounded-3xl border border-white/70 bg-white/80 p-5 shadow-[0_18px_45px_rgba(15,23,42,0.12)] transition hover:-translate-y-1 hover:shadow-[0_26px_80px_rgba(15,23,42,0.24)]">
+      {product.image && (
+        <div className="mb-4 overflow-hidden rounded-2xl bg-evyra-shell/40">
+          <Image
+            src={product.image}
+            alt={product.name}
+            width={640}
+            height={420}
+            className="h-48 w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+          />
+        </div>
+      )}
       <div className="mb-4 space-y-2">
         <p className="text-xs uppercase tracking-[0.18em] text-evyra-forest/60">
           {product.category}

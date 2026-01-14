@@ -11,6 +11,7 @@ export type Product = {
   category: ProductCategory;
   price: number;
   tags?: string[];
+  image?: string;
 };
 
 export const products: Product[] = [
@@ -22,6 +23,7 @@ export const products: Product[] = [
     category: "Bridal Gown",
     price: 4200,
     tags: ["Signature", "Hand embroidered"],
+    image: "/evylenga.png",
   },
   {
     id: "evyra-moonlit-sari",
@@ -31,6 +33,7 @@ export const products: Product[] = [
     category: "Bridal Gown",
     price: 3650,
     tags: ["Modern classic", "Pearl edged"],
+    image: "/evysari.png",
   },
   {
     id: "evyra-rosewater-midi",
@@ -40,6 +43,7 @@ export const products: Product[] = [
     category: "Reception Dress",
     price: 1900,
     tags: ["Reception", "Lightweight"],
+    image: "/evydress.png",
   },
   {
     id: "evyra-saffron-lehenga",
