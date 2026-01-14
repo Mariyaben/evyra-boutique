@@ -89,3 +89,12 @@ html {
   transform-origin: center;
   border-radius: 0;
 }
+
+.shop-page-surface {
+  background: radial-gradient(
+    circle at top,
+    #fbeee7 0,
+    #f5ece7 45%,
+    #ffffff 100%
+  );
+}
