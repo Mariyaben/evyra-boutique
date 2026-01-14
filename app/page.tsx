@@ -32,6 +32,17 @@ export default function Home() {
     <div className="home-page space-y-16 md:space-y-24">
       <section className="hero-section relative mx-[calc(50%-50vw)] w-screen overflow-hidden bg-evyra-shell/5 px-6 py-10 shadow-[0_26px_90px_rgba(15,23,42,0.35)] md:px-10 md:py-16">
         <div className="pointer-events-none absolute inset-0 -z-10">
+          {/* Mobile hero image */}
+          <Image
+            src="/hero-mobile.png"
+            alt="Soft bridal fabric backdrop"
+            fill
+            priority
+            unoptimized
+            sizes="100vw"
+            className="block object-cover hero-image md:hidden"
+          />
+          {/* Desktop / tablet hero image */}
           <Image
             src="/evyra-fabric.jpg"
             alt="Soft bridal fabric backdrop"
@@ -39,11 +50,28 @@ export default function Home() {
             priority
             unoptimized
             sizes="100vw"
-            className="object-cover hero-image"
+            className="hidden object-cover hero-image md:block"
           />
           <div className="absolute inset-0 hero-gradient-mask" />
         </div>
-        <div className="hero-content relative max-w-xl space-y-6">
+        {/* Minimal overlay for mobile hero */}
+        <div className="hero-mobile-overlay pointer-events-none absolute inset-x-10 top-24 z-10 text-center text-evyra-ivory md:hidden">
+          <p className="text-[0.78rem] uppercase tracking-[0.28em] text-white/80">
+            For the bride
+          </p>
+          <p className="mt-3 font-display text-3xl leading-snug tracking-tight text-white">
+            Heirloom pieces for luminous ceremonies.
+          </p>
+          <Link
+            href="/shop"
+            className="pointer-events-auto mx-auto mt-5 inline-flex items-center justify-center rounded-full border border-white/70 bg-white/90 px-6 py-2 text-[0.72rem] font-medium uppercase tracking-[0.22em] text-evyra-ink shadow-sm"
+          >
+            Shop now
+          </Link>
+        </div>
+
+        {/* Detailed hero copy (desktop and tablet) */}
+        <div className="hero-content relative hidden max-w-xl space-y-6 md:relative md:block">
           <p className="text-xs uppercase tracking-[0.24em] text-evyra-forest/70">
             Evyra Boutique · Bridal 2025
           </p>
