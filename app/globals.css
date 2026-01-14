@@ -98,3 +98,41 @@ html {
     #ffffff 100%
   );
 }
+
+@media (max-width: 767px) {
+  .home-page {
+    padding-top: 0.75rem;
+  }
+
+  .hero-content {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .hero-content > .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-meta {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-meta > div {
+    max-width: 17rem;
+  }
+
+  .featured-grid,
+  .collections-grid,
+  .silk-grid {
+    row-gap: 2.25rem;
+  }
+
+  .rajasthani-frame {
+    padding: 0.6rem;
+  }
+
+  .rajasthani-frame::before {
+    inset: 8px;
+  }
+}

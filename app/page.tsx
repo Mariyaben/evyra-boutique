@@ -29,8 +29,8 @@ const collections = [
 
 export default function Home() {
   return (
-    <div className="space-y-16 md:space-y-24">
-      <section className="relative mx-[calc(50%-50vw)] w-screen overflow-hidden bg-evyra-shell/5 px-6 py-10 shadow-[0_26px_90px_rgba(15,23,42,0.35)] md:px-10 md:py-16">
+    <div className="home-page space-y-16 md:space-y-24">
+      <section className="hero-section relative mx-[calc(50%-50vw)] w-screen overflow-hidden bg-evyra-shell/5 px-6 py-10 shadow-[0_26px_90px_rgba(15,23,42,0.35)] md:px-10 md:py-16">
         <div className="pointer-events-none absolute inset-0 -z-10">
           <Image
             src="/evyra-fabric.jpg"
@@ -43,7 +43,7 @@ export default function Home() {
           />
           <div className="absolute inset-0 hero-gradient-mask" />
         </div>
-        <div className="relative max-w-xl space-y-6">
+        <div className="hero-content relative max-w-xl space-y-6">
           <p className="text-xs uppercase tracking-[0.24em] text-evyra-forest/70">
             Evyra Boutique · Bridal 2025
           </p>
@@ -55,7 +55,7 @@ export default function Home() {
             that honour craft while feeling impossibly light to wear. Each look
             is designed for movement, laughter and long, sparkling evenings.
           </p>
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="hero-actions flex flex-wrap items-center gap-3">
             <Link
               href="/shop"
               className="inline-flex items-center gap-2 rounded-full bg-evyra-forest px-6 py-3 text-xs font-medium uppercase tracking-[0.22em] text-evyra-ivory shadow-md transition hover:bg-evyra-forest/95"
@@ -69,12 +69,15 @@ export default function Home() {
               Discover our story
             </Link>
           </div>
-          <div className="mt-4 flex flex-wrap gap-6 text-xs text-evyra-ink/70">
+          <div className="hero-meta mt-4 flex flex-wrap gap-6 text-xs text-evyra-ink/70">
             <div>
               <p className="uppercase tracking-[0.2em]">Appointments</p>
               <p>By private viewing in New York & Mumbai.</p>
             </div>
-                Shop jewellery
+            <div>
+              <p className="uppercase tracking-[0.2em]">Jewellery</p>
+              <p>Shop jewellery accents to complete your look.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -160,7 +163,7 @@ export default function Home() {
             View all pieces
           </Link>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="featured-grid grid gap-6 md:grid-cols-3">
           {featuredProducts.map((product) => (
             <article key={product.id} className="group space-y-3">
               <div className="relative aspect-[3/4] overflow-hidden rounded-[2.25rem] bg-evyra-shell/40 shadow-[0_24px_80px_rgba(15,23,42,0.22)]">
@@ -210,7 +213,7 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-4">
+            <div className="collections-grid grid gap-8 md:grid-cols-4">
               {collections.map((collection) => (
                 <Link
                   key={collection.id}
@@ -252,7 +255,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="silk-grid grid gap-6 md:grid-cols-2">
             <div className="relative aspect-[3/4] overflow-hidden bg-evyra-shell/40 shadow-[0_26px_90px_rgba(15,23,42,0.32)]">
               <Image
                 src="/evysaree2.png"
@@ -295,14 +298,14 @@ export default function Home() {
             </p>
           </div>
           <div className="space-y-3 text-xs text-evyra-ink/70">
-            <p className="uppercase tracking-[0.2em]">Private appointments</p>
+              <p className="uppercase tracking-[0.2em]">Private appointments</p>
             <p>
               Share your date, venue and moodboard. Our stylists curate three to
               five looks before you even step into the atelier.
             </p>
             <p className="uppercase tracking-[0.2em]">Beyond the wedding day</p>
             <p>
-              Many pieces are designed to be restyled,shortened, layered or
+              Many pieces are designed to be restyled, shortened, layered or
               reworn for future celebrations.
             </p>
           </div>
