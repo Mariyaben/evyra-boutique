@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { notFound, useParams } from "next/navigation";
+import Link from "next/link";
 import { productsById } from "../../../lib/products";
 import { useCart } from "../../../components/cart-context";
 
@@ -69,7 +70,14 @@ export default function ProductPage() {
         </div>
 
         <div className="space-y-6 px-4 py-6 md:space-y-8 md:px-8 md:py-10">
-          <header className="space-y-3 border-b border-evyra-ink/10 pb-5">
+          <header className="space-y-4 border-b border-evyra-ink/10 pb-5">
+            <Link
+              href="/shop"
+              className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-evyra-ink/60 transition hover:text-evyra-forest"
+            >
+              <span className="text-sm">←</span>
+              <span>Back to shop</span>
+            </Link>
             <p className="text-[11px] uppercase tracking-[0.22em] text-evyra-ink/60">
               {product.category}
             </p>

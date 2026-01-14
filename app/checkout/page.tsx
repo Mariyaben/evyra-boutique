@@ -39,7 +39,7 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="grid gap-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] md:items-start">
+    <div className="mt-8 md:mt-12 grid gap-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] md:items-start">
       <section className="space-y-6">
         <header className="space-y-3">
           <p className="text-xs uppercase tracking-[0.24em] text-evyra-forest/70">
