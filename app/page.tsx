@@ -63,7 +63,7 @@ export default function Home() {
               Begin your journey
             </Link>
             <Link
-              href="#story"
+              href="/our-story"
               className="text-xs font-medium uppercase tracking-[0.22em] text-evyra-ink/80 hover:text-evyra-forest"
             >
               Discover our story

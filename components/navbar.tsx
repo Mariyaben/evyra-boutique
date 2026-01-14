@@ -9,7 +9,7 @@ import { CartDrawer } from "./cart-drawer";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/shop", label: "Shop" },
-  { href: "/#story", label: "Our Story" },
+  { href: "/our-story", label: "Our Story" },
 ];
 
 export function Navbar() {
@@ -84,7 +84,7 @@ export function Navbar() {
           </button>
         </div>
         {isShopOpen && (
-          <div className="absolute inset-x-0 top-full z-30 border-b border-white/60 bg-[radial-gradient(circle_at_top_left,#fdf4ea_0,#f6e2d6_35%,#f6c2cf_80%)]/90 backdrop-blur-2xl shadow-[0_28px_110px_rgba(190,120,150,0.35)]">
+          <div className="absolute inset-x-0 top-full z-30 border-b border-white/60 bg-[radial-gradient(circle_at_top_left,#fdf4ea_0,#f6e2d6_35%,#f6c2cf_80%)] shadow-[0_28px_110px_rgba(190,120,150,0.35)]">
             <div className="mx-auto max-w-6xl px-10 py-8 text-[11px]">
               <div className="mb-6 flex items-baseline justify-between gap-4">
                 <div>

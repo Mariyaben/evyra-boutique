@@ -36,7 +36,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                 <Link href="/" className="hover:text-evyra-forest">
                   Bridal collections
                 </Link>
-                <Link href="#story" className="hover:text-evyra-forest">
+                <Link href="/our-story" className="hover:text-evyra-forest">
                   Our story
                 </Link>
                 <span className="mt-2 text-[0.7rem] uppercase tracking-[0.18em] text-evyra-ink/60">
