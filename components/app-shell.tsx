@@ -62,6 +62,24 @@ export function AppShell({ children }: { children: ReactNode }) {
               <p>© {new Date().getFullYear()} Evyra Boutique. All rights reserved.</p>
               <p className="uppercase tracking-[0.18em]">Crafted for the modern bride.</p>
             </div>
+
+            <div className="mt-3 border-t border-white/50 pt-3 text-[0.68rem] leading-relaxed text-evyra-ink/60">
+              <p>
+                This experience is a representational website created by Evyra Private Limited.
+                All images showcased are AI generated and intended for conceptual illustration only.
+                For further information or collaboration inquiries, please contact Team Evyra via
+                {" "}
+                <a
+                  href="https://www.evyra.in"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-medium text-evyra-forest underline-offset-4 hover:underline"
+                >
+                  www.evyra.in
+                </a>
+                .
+              </p>
+            </div>
           </div>
         </footer>
       </div>

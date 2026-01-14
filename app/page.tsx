@@ -237,6 +237,44 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="mx-[calc(50%-50vw)] w-screen bg-evyra-ivory px-6 py-16 md:px-10 md:py-20">
+        <div className="mx-auto max-w-6xl space-y-10 md:space-y-12">
+          <div className="space-y-3 text-center">
+            <p className="text-xs uppercase tracking-[0.24em] text-evyra-forest/70">
+              Signature saree edit
+            </p>
+            <h2 className="font-display text-2xl tracking-[0.22em] text-evyra-ink md:text-3xl lg:text-4xl">
+              LUMINOUS HANDWOVEN SILKS
+            </h2>
+            <p className="mx-auto max-w-2xl text-sm leading-relaxed text-evyra-ink/80 md:text-base">
+              A luminous edit of handwoven silks and brocades, reimagined in fluid, shoulder-skimming
+              drapes and soft metallics that move like liquid light across the body.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="relative aspect-[3/4] overflow-hidden bg-evyra-shell/40 shadow-[0_26px_90px_rgba(15,23,42,0.32)]">
+              <Image
+                src="/evysaree2.png"
+                alt="Handwoven silk saree in rose tone"
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                className="object-cover object-top"
+              />
+            </div>
+            <div className="relative aspect-[3/4] overflow-hidden bg-evyra-shell/40 shadow-[0_26px_90px_rgba(15,23,42,0.32)]">
+              <Image
+                src="/evygoldsaree.png"
+                alt="Handwoven silk saree in antique gold tone"
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                className="object-cover object-top"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section
         id="story"
         className="rounded-[2.5rem] border border-white/70 bg-evyra-ivory/85 px-6 py-8 shadow-[0_22px_80px_rgba(15,23,42,0.16)] md:px-10 md:py-10"
