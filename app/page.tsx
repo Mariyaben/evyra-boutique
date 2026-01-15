@@ -117,8 +117,8 @@ export default function Home() {
       </section>
 
       {/* Mobile-only couture fabric intro section */}
-      <section className="md:hidden bg-evyra-ivory/95 px-6 py-12">
-        <div className="space-y-6">
+      <section className="md:hidden bg-evyra-ivory/95 px-6 py-3">
+        <div className="space-y-2">
           <div className="space-y-3">
             <p className="text-xs uppercase tracking-[0.24em] text-evyra-forest/70">
               Couture fabric library
@@ -135,7 +135,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-[calc(50%-50vw)] w-screen bg-evyra-ivory/95 px-6 py-12 md:px-10 md:py-16">
+      <section className="mx-[calc(50%-50vw)] w-screen bg-evyra-ivory/95 px-6 py-12 md:px-10 md:py-16 md:pt-12 pt-0">
         <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-center">
           <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-evyra-shell/40 shadow-[0_24px_70px_rgba(15,23,42,0.32)]">
             <Image
@@ -266,7 +266,7 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="collections-grid grid gap-8 md:grid-cols-4">
+            <div className="collections-grid grid gap-8 grid-cols-2 md:grid-cols-4">
               {collections.map((collection) => (
                 <Link
                   key={collection.id}
