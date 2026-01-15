@@ -61,6 +61,7 @@ export default function Home() {
         
         {/* Minimal overlay for mobile hero */}
         <div className="hero-mobile-overlay pointer-events-none absolute inset-x-6 top-1/2 -translate-y-1/2 z-10 text-center md:hidden">
+          <div className="absolute inset-0 -z-10 hero-gradient-mask rounded-3xl" />
           <p className="text-xs uppercase tracking-[0.28em] text-white/90">
             Evyra Boutique
           </p>
