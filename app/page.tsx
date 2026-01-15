@@ -62,34 +62,44 @@ export default function Home() {
         {/* Minimal overlay for mobile hero */}
         <div className="hero-mobile-overlay pointer-events-none absolute inset-x-6 top-1/2 -translate-y-1/2 z-10 text-center md:hidden">
           <div className="absolute inset-0 -z-10 hero-gradient-mask blur-2xl opacity-80" />
-          <p className="text-xs uppercase tracking-[0.28em] text-white/90">
+          <p className="text-xs uppercase tracking-[0.28em] text-white/90 animate-fadeInSlow" style={{animationDuration: '1.2s', animationFillMode: 'both'}}>
             Evyra Boutique
           </p>
-          <p className="mt-4 font-display text-3xl leading-snug tracking-tight text-white drop-shadow-lg">
+          <p className="mt-4 font-display text-3xl leading-snug tracking-tight text-white drop-shadow-lg animate-fadeInSlow" style={{animationDuration: '1.5s', animationDelay: '0.2s', animationFillMode: 'both'}}>
             Heirloom pieces for luminous ceremonies.
           </p>
           <Link
             href="/shop"
-            className="pointer-events-auto mx-auto mt-6 inline-flex items-center justify-center rounded-full border-2 border-white/80 bg-white/10 backdrop-blur-sm px-8 py-2.5 text-xs font-medium uppercase tracking-[0.22em] text-white shadow-md hover:bg-white/20 transition"
+            className="pointer-events-auto mx-auto mt-6 inline-flex items-center justify-center rounded-full border-2 border-white/80 bg-white/10 backdrop-blur-sm px-8 py-2.5 text-xs font-medium uppercase tracking-[0.22em] text-white shadow-md hover:bg-white/20 transition animate-riseGently"
+            style={{animationDuration: '1.8s', animationDelay: '0.4s', animationFillMode: 'both'}}
           >
             Shop now
           </Link>
         </div>
 
+        {/* Scroll invitation - downward arrow */}
+        <div className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 z-10 md:hidden">
+          <div className="animate-bounce">
+            <svg className="w-5 h-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
+        </div>
+
         {/* Detailed hero copy (desktop and tablet) */}
         <div className="hero-content relative hidden max-w-xl space-y-6 md:relative md:block">
-          <p className="text-xs uppercase tracking-[0.24em] text-evyra-forest/70">
+          <p className="text-xs uppercase tracking-[0.24em] text-evyra-forest/70 animate-fadeInSlow" style={{animationDuration: '1.2s', animationFillMode: 'both'}}>
             Evyra Boutique · Bridal 2025
           </p>
-          <h1 className="font-display text-3xl leading-tight tracking-tight text-evyra-ink md:text-4xl lg:text-5xl">
+          <h1 className="font-display text-3xl leading-tight tracking-tight text-evyra-ink md:text-4xl lg:text-5xl animate-fadeInSlow" style={{animationDuration: '1.5s', animationDelay: '0.2s', animationFillMode: 'both'}}>
             Heirloom silhouettes for the modern bride.
           </h1>
-          <p className="max-w-xl text-sm leading-relaxed text-evyra-ink/80 md:text-base">
+          <p className="max-w-xl text-sm leading-relaxed text-evyra-ink/80 md:text-base animate-fadeInSlow" style={{animationDuration: '1.5s', animationDelay: '0.3s', animationFillMode: 'both'}}>
             Evyra curates made-to-measure gowns, lehengas and ceremony pieces
             that honour craft while feeling impossibly light to wear. Each look
             is designed for movement, laughter and long, sparkling evenings.
           </p>
-          <div className="hero-actions flex flex-wrap items-center gap-3">
+          <div className="hero-actions flex flex-wrap items-center gap-3 animate-riseGently" style={{animationDuration: '1.8s', animationDelay: '0.5s', animationFillMode: 'both'}}>
             <Link
               href="/shop"
               className="inline-flex items-center gap-2 rounded-full bg-evyra-forest px-6 py-3 text-xs font-medium uppercase tracking-[0.22em] text-evyra-ivory shadow-md transition hover:bg-evyra-forest/95"
@@ -103,7 +113,7 @@ export default function Home() {
               Discover our story
             </Link>
           </div>
-          <div className="hero-meta mt-4 flex flex-wrap gap-6 text-xs text-evyra-ink/70">
+          <div className="hero-meta mt-4 flex flex-wrap gap-6 text-xs text-evyra-ink/70 animate-fadeInSlow" style={{animationDuration: '1.5s', animationDelay: '0.4s', animationFillMode: 'both'}}>
             <div>
               <p className="uppercase tracking-[0.2em]">Appointments</p>
               <p>By private viewing in New York & Mumbai.</p>
