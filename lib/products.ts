@@ -23,7 +23,7 @@ export const products: Product[] = [
     category: "Bridal Gown",
     price: 4200,
     tags: ["Signature", "Hand embroidered"],
-    image: "/evylenga.png",
+    image: "/hero-mobile.png",
   },
   {
     id: "evyra-moonlit-sari",

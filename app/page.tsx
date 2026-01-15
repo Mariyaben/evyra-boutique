@@ -31,40 +31,34 @@ export default function Home() {
   return (
     <div className="home-page space-y-16 md:space-y-24">
       <section className="hero-section relative mx-[calc(50%-50vw)] w-screen overflow-hidden bg-evyra-shell/5 px-6 py-10 shadow-[0_26px_90px_rgba(15,23,42,0.35)] md:px-10 md:py-16">
-        <div className="pointer-events-none absolute inset-0 -z-10">
-          {/* Mobile hero image */}
+        {/* Mobile hero image - full dimension */}
+        <div className="md:hidden pointer-events-none">
           <Image
-            src="/hero-mobile.png"
+            src="/evylenga.png"
             alt="Soft bridal fabric backdrop"
-            fill
+            width={1080}
+            height={1200}
             priority
             unoptimized
             sizes="100vw"
-            className="block object-cover hero-image md:hidden"
+            className="w-full h-auto object-cover"
           />
-          {/* Desktop / tablet hero image */}
-          <Image
-            src="/evyra-fabric.jpg"
-            alt="Soft bridal fabric backdrop"
-            fill
-            priority
-            unoptimized
-            sizes="100vw"
-            className="hidden object-cover hero-image md:block"
-          />
-          <div className="absolute inset-0 hero-gradient-mask" />
         </div>
+        
+        {/* Rosy gradient overlay for mobile hero - like desktop version */}
+        <div className="pointer-events-none absolute inset-0 hero-gradient-mask md:hidden" />
+        
         {/* Minimal overlay for mobile hero */}
-        <div className="hero-mobile-overlay pointer-events-none absolute inset-x-10 top-24 z-10 text-center text-evyra-ivory md:hidden">
-          <p className="text-[0.78rem] uppercase tracking-[0.28em] text-white/80">
-            For the bride
+        <div className="hero-mobile-overlay pointer-events-none absolute inset-x-6 top-1/2 -translate-y-1/2 z-10 text-center md:hidden">
+          <p className="text-xs uppercase tracking-[0.28em] text-white/90">
+            Evyra Boutique
           </p>
-          <p className="mt-3 font-display text-3xl leading-snug tracking-tight text-white">
+          <p className="mt-4 font-display text-3xl leading-snug tracking-tight text-white drop-shadow-lg">
             Heirloom pieces for luminous ceremonies.
           </p>
           <Link
             href="/shop"
-            className="pointer-events-auto mx-auto mt-5 inline-flex items-center justify-center rounded-full border border-white/70 bg-white/90 px-6 py-2 text-[0.72rem] font-medium uppercase tracking-[0.22em] text-evyra-ink shadow-sm"
+            className="pointer-events-auto mx-auto mt-6 inline-flex items-center justify-center rounded-full border-2 border-white/80 bg-white/10 backdrop-blur-sm px-8 py-2.5 text-xs font-medium uppercase tracking-[0.22em] text-white shadow-md hover:bg-white/20 transition"
           >
             Shop now
           </Link>

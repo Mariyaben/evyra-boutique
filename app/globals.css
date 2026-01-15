@@ -104,6 +104,23 @@ html {
     padding-top: 0.75rem;
   }
 
+  .hero-section {
+    position: relative;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    width: 100vw;
+    min-height: 100vh;
+    padding: 0;
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+  .hero-section > div:first-child {
+    position: relative !important;
+    width: 100%;
+    height: 100%;
+  }
+
   .hero-content {
     margin-inline: auto;
     text-align: center;
