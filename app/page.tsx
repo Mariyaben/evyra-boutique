@@ -30,11 +30,11 @@ const collections = [
 export default function Home() {
   return (
     <div className="home-page space-y-16 md:space-y-24">
-      <section className="hero-section relative mx-[calc(50%-50vw)] w-screen overflow-hidden bg-evyra-shell/5 px-6 py-10 shadow-[0_26px_90px_rgba(15,23,42,0.35)] md:px-10 md:py-16">
+      <section className="hero-section relative mx-[calc(50%-50vw)] w-screen overflow-hidden bg-evyra-shell/5 py-0 px-0 md:px-10 md:py-16 md:shadow-[0_26px_90px_rgba(15,23,42,0.35)] shadow-none md:bg-evyra-shell/5">
         {/* Mobile hero image - full dimension */}
         <div className="md:hidden pointer-events-none">
           <Image
-            src="/evylenga.png"
+            src="/evygoldsaree.png"
             alt="Soft bridal fabric backdrop"
             width={1080}
             height={1200}
