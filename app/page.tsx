@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { featuredProducts } from "../lib/products";
 
 const collections = [
@@ -27,22 +28,63 @@ const collections = [
   },
 ];
 
+const heroImages = [
+  "/evygoldsaree.png",
+  "/hero-mobile3.png",
+  "/evysaree2.png",
+];
+
 export default function Home() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="home-page space-y-16 md:space-y-24">
       <section className="hero-section relative mx-[calc(50%-50vw)] w-screen overflow-hidden bg-evyra-shell/5 py-0 px-0 md:px-10 md:py-16 md:shadow-[0_26px_90px_rgba(15,23,42,0.35)] shadow-none md:bg-evyra-shell/5">
-        {/* Mobile hero image - full dimension */}
-        <div className="md:hidden pointer-events-none">
-          <Image
-            src="/evygoldsaree.png"
-            alt="Soft bridal fabric backdrop"
-            width={1080}
-            height={1200}
-            priority
-            unoptimized
-            sizes="100vw"
-            className="w-full h-auto object-cover"
-          />
+        {/* Mobile hero image carousel */}
+        <div className="md:hidden pointer-events-none relative">
+          {heroImages.map((image, index) => (
+            <div
+              key={image}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentImageIndex ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <Image
+                src={image}
+                alt="Soft bridal fabric backdrop"
+                width={1080}
+                height={1200}
+                priority={index === 0}
+                unoptimized
+                sizes="100vw"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          ))}
+          
+          {/* Carousel indicators */}
+          <div className="pointer-events-auto absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2.5">
+            {heroImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentImageIndex(index)}
+                className={`rounded-full transition-all ${
+                  index === currentImageIndex
+                    ? "bg-white w-3 h-2"
+                    : "bg-white/50 w-2 h-2 hover:bg-white/70"
+                }`}
+                aria-label={`Go to image ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
         
         {/* Desktop / tablet hero background */}
@@ -130,13 +172,13 @@ export default function Home() {
       <section className="md:hidden bg-evyra-ivory/95 px-6 py-1">
         <div className="space-y-2">
           <div className="space-y-3">
-            <p className="text-xs uppercase tracking-[0.24em] text-evyra-forest/70">
+            <p className="text-xs uppercase tracking-[0.24em] text-evyra-forest/70 animate-fadeInSlow" style={{animationDuration: '1.2s', animationFillMode: 'both'}}>
               Couture fabric library
             </p>
-            <h2 className="font-display text-3xl tracking-[0.22em] text-evyra-ink">
+            <h2 className="font-display text-3xl tracking-[0.22em] text-evyra-ink animate-fadeInSlow" style={{animationDuration: '1.5s', animationDelay: '0.2s', animationFillMode: 'both'}}>
               SCULPTED IN SILK & TULLE
             </h2>
-            <p className="text-sm leading-relaxed text-evyra-ink/80">
+            <p className="text-sm leading-relaxed text-evyra-ink/80 animate-fadeInSlow" style={{animationDuration: '1.5s', animationDelay: '0.3s', animationFillMode: 'both'}}>
               From whisper–light organza to hand–loomed silks, every Evyra gown
               begins with rare fabrics sourced from small mills and dyed to our
               own palette of shell, rose and ink.
@@ -160,13 +202,13 @@ export default function Home() {
 
           <div className="space-y-6 hidden md:block">
             <div className="space-y-3">
-              <p className="text-xs uppercase tracking-[0.24em] text-evyra-forest/70">
+              <p className="text-xs uppercase tracking-[0.24em] text-evyra-forest/70 animate-fadeInSlow" style={{animationDuration: '1.2s', animationFillMode: 'both'}}>
                 Couture fabric library
               </p>
-              <h2 className="font-display text-3xl tracking-[0.22em] text-evyra-ink md:text-4xl">
+              <h2 className="font-display text-3xl tracking-[0.22em] text-evyra-ink md:text-4xl animate-fadeInSlow" style={{animationDuration: '1.5s', animationDelay: '0.2s', animationFillMode: 'both'}}>
                 SCULPTED IN SILK & TULLE
               </h2>
-              <p className="text-sm leading-relaxed text-evyra-ink/80 md:text-base">
+              <p className="text-sm leading-relaxed text-evyra-ink/80 md:text-base animate-fadeInSlow" style={{animationDuration: '1.5s', animationDelay: '0.3s', animationFillMode: 'both'}}>
                 From whisper–light organza to hand–loomed silks, every Evyra gown
                 begins with rare fabrics sourced from small mills and dyed to our
                 own palette of shell, rose and ink.
@@ -212,10 +254,10 @@ export default function Home() {
       <section className="space-y-6">
         <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-evyra-forest/70">
+            <p className="text-xs uppercase tracking-[0.22em] text-evyra-forest/70 animate-fadeInSlow" style={{animationDuration: '1.2s', animationFillMode: 'both'}}>
               New at Evyra
             </p>
-            <h2 className="font-display text-2xl tracking-tight text-evyra-ink">
+            <h2 className="font-display text-2xl tracking-tight text-evyra-ink animate-fadeInSlow" style={{animationDuration: '1.5s', animationDelay: '0.2s', animationFillMode: 'both'}}>
               Curated looks for your day.
             </h2>
           </div>
@@ -268,10 +310,10 @@ export default function Home() {
 
           <div className="space-y-6">
             <div className="text-center">
-              <p className="text-xs uppercase tracking-[0.24em] text-evyra-forest/70">
+              <p className="text-xs uppercase tracking-[0.24em] text-evyra-forest/70 animate-fadeInSlow" style={{animationDuration: '1.2s', animationFillMode: 'both'}}>
                 Collections
               </p>
-              <h2 className="font-display text-2xl tracking-tight text-evyra-ink md:text-3xl">
+              <h2 className="font-display text-2xl tracking-tight text-evyra-ink md:text-3xl animate-fadeInSlow" style={{animationDuration: '1.5s', animationDelay: '0.2s', animationFillMode: 'both'}}>
                 Explore our signature categories.
               </h2>
             </div>
