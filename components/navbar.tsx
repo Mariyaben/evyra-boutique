@@ -17,6 +17,7 @@ export function Navbar() {
   const { totalCount } = useCart();
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isShopOpen, setIsShopOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <>
@@ -70,9 +71,21 @@ export function Navbar() {
               );
             })}
           </nav>
+          {/* Mobile hamburger menu */}
+          <button
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            className="md:hidden inline-flex flex-col gap-1.5 p-2"
+            aria-label="Toggle menu"
+          >
+            <span className={`h-0.5 w-5 bg-evyra-forest transition-all ${isSidebarOpen ? 'rotate-45 translate-y-2' : ''}`} />
+            <span className={`h-0.5 w-5 bg-evyra-forest transition-all ${isSidebarOpen ? 'opacity-0' : ''}`} />
+            <span className={`h-0.5 w-5 bg-evyra-forest transition-all ${isSidebarOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+          </button>
+          
+          {/* Bag button - desktop only */}
           <button
             onClick={() => setIsCartOpen(true)}
-            className="relative inline-flex items-center gap-2 rounded-full border border-evyra-ink/10 bg-white/80 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-evyra-ink shadow-sm hover:bg-white"
+            className="hidden md:inline-flex items-center gap-2 rounded-full border border-evyra-ink/10 bg-white/80 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-evyra-ink shadow-sm hover:bg-white"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-evyra-gold" />
             Bag
@@ -201,6 +214,78 @@ export function Navbar() {
           </div>
         )}
       </header>
+      
+      {/* Mobile sidebar */}
+      {isSidebarOpen && (
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 bg-black/30 z-30 md:hidden"
+            onClick={() => setIsSidebarOpen(false)}
+          />
+          
+          {/* Sidebar */}
+          <nav className="fixed left-0 top-0 h-screen w-64 bg-evyra-ivory z-40 shadow-xl flex flex-col p-6 pt-20 md:hidden">
+            {/* Close button */}
+            <button
+              onClick={() => setIsSidebarOpen(false)}
+              className="absolute top-6 right-6 p-2"
+              aria-label="Close menu"
+            >
+              <svg className="w-6 h-6 text-evyra-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            
+            {/* Navigation links */}
+            <div className="space-y-4 flex-1">
+              <Link
+                href="/"
+                onClick={() => setIsSidebarOpen(false)}
+                className={`block text-sm font-medium uppercase tracking-[0.22em] transition ${
+                  pathname === "/"
+                    ? "text-evyra-forest"
+                    : "text-evyra-ink/70 hover:text-evyra-forest"
+                }`}
+              >
+                Home
+              </Link>
+              <Link
+                href="/shop"
+                onClick={() => setIsSidebarOpen(false)}
+                className={`block text-sm font-medium uppercase tracking-[0.22em] transition ${
+                  pathname === "/shop"
+                    ? "text-evyra-forest"
+                    : "text-evyra-ink/70 hover:text-evyra-forest"
+                }`}
+              >
+                Shop
+              </Link>
+              <Link
+                href="/our-story"
+                onClick={() => setIsSidebarOpen(false)}
+                className={`block text-sm font-medium uppercase tracking-[0.22em] transition ${
+                  pathname === "/our-story"
+                    ? "text-evyra-forest"
+                    : "text-evyra-ink/70 hover:text-evyra-forest"
+                }`}
+              >
+                Our Story
+              </Link>
+              <button
+                onClick={() => {
+                  setIsCartOpen(true);
+                  setIsSidebarOpen(false);
+                }}
+                className="block w-full text-left text-sm font-medium uppercase tracking-[0.22em] text-evyra-ink/70 hover:text-evyra-forest transition"
+              >
+                Bag ({totalCount})
+              </button>
+            </div>
+          </nav>
+        </>
+      )}
+      
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </>
   );

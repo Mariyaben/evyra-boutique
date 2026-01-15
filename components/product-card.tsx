@@ -37,11 +37,11 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
         )}
 
-        <div className="mt-4 space-y-1">
-          <p className="text-[11px] uppercase tracking-[0.18em] text-evyra-ink/60">
+        <div className="mt-3 md:mt-4 space-y-1">
+          <p className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] text-evyra-ink/60">
             {product.category}
           </p>
-          <h3 className="font-display text-sm tracking-tight text-evyra-ink truncate">
+          <h3 className="font-display text-xs md:text-sm tracking-tight text-evyra-ink truncate">
             {product.name}
           </h3>
           <p className="text-sm font-medium text-evyra-ink">
@@ -53,7 +53,7 @@ export function ProductCard({ product }: ProductCardProps) {
       <button
         type="button"
         onClick={() => addItem(product.id)}
-        className="mt-3 inline-flex w-max items-center rounded-full border border-evyra-ink/20 bg-white/70 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.22em] text-evyra-ink/80 shadow-sm transition hover:border-evyra-forest/60 hover:text-evyra-forest"
+        className="mt-3 inline-flex w-max items-center rounded-full border border-evyra-ink/20 bg-white/70 px-3 md:px-4 py-1.5 text-[10px] md:text-[11px] font-medium uppercase tracking-[0.18em] md:tracking-[0.22em] text-evyra-ink/80 shadow-sm transition hover:border-evyra-forest/60 hover:text-evyra-forest whitespace-nowrap"
       >
         Ready to ship
       </button>
