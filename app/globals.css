@@ -101,16 +101,25 @@ html {
 
 @media (max-width: 767px) {
   .home-page {
-    padding-top: 0.75rem;
+    padding-top: 0;
+    gap: 0;
+  }
+
+  .home-page > .hero-section {
+    margin-bottom: 0;
+    margin-left: calc(-1rem) !important;
+    width: calc(100% + 2rem);
   }
 
   .hero-section {
     position: relative;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
     width: 100vw;
     min-height: 100vh;
-    padding: 0;
+    padding: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
     background: none !important;
     box-shadow: none !important;
   }
