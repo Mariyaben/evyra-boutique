@@ -59,9 +59,6 @@ export default function Home() {
           <div className="absolute inset-0 hero-gradient-mask" />
         </div>
         
-        {/* Smooth shadow transition at bottom of mobile hero */}
-        <div className="pointer-events-none absolute bottom-0 inset-x-0 h-48 bg-gradient-to-b from-transparent to-black/5 md:hidden" />
-        
         {/* Minimal overlay for mobile hero */}
         <div className="hero-mobile-overlay pointer-events-none absolute inset-x-6 top-1/2 -translate-y-1/2 z-10 text-center md:hidden">
           <div className="absolute inset-0 -z-10 hero-gradient-mask blur-2xl opacity-80" />
@@ -119,6 +116,25 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Mobile-only couture fabric intro section */}
+      <section className="md:hidden bg-evyra-ivory/95 px-6 py-12">
+        <div className="space-y-6">
+          <div className="space-y-3">
+            <p className="text-xs uppercase tracking-[0.24em] text-evyra-forest/70">
+              Couture fabric library
+            </p>
+            <h2 className="font-display text-3xl tracking-[0.22em] text-evyra-ink">
+              SCULPTED IN SILK & TULLE
+            </h2>
+            <p className="text-sm leading-relaxed text-evyra-ink/80">
+              From whisper–light organza to hand–loomed silks, every Evyra gown
+              begins with rare fabrics sourced from small mills and dyed to our
+              own palette of shell, rose and ink.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-[calc(50%-50vw)] w-screen bg-evyra-ivory/95 px-6 py-12 md:px-10 md:py-16">
         <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-center">
           <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-evyra-shell/40 shadow-[0_24px_70px_rgba(15,23,42,0.32)]">
@@ -132,7 +148,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-6 hidden md:block">
             <div className="space-y-3">
               <p className="text-xs uppercase tracking-[0.24em] text-evyra-forest/70">
                 Couture fabric library
