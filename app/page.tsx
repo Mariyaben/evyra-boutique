@@ -59,11 +59,9 @@ export default function Home() {
           <div className="absolute inset-0 hero-gradient-mask" />
         </div>
         
-        {/* Rosy gradient overlay for mobile hero - flows naturally */}
-        <div className="pointer-events-none absolute inset-0 hero-gradient-mask md:hidden" />
-        
         {/* Minimal overlay for mobile hero */}
         <div className="hero-mobile-overlay pointer-events-none absolute inset-x-6 top-1/2 -translate-y-1/2 z-10 text-center md:hidden">
+          <div className="absolute inset-0 -z-10 hero-gradient-mask blur-2xl opacity-80" />
           <p className="text-xs uppercase tracking-[0.28em] text-white/90">
             Evyra Boutique
           </p>
