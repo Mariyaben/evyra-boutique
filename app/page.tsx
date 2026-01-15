@@ -45,9 +45,6 @@ export default function Home() {
           />
         </div>
         
-        {/* Rosy gradient overlay for mobile hero - like desktop version */}
-        <div className="pointer-events-none absolute inset-0 hero-gradient-mask md:hidden" />
-        
         {/* Desktop / tablet hero background */}
         <div className="hidden md:block pointer-events-none absolute inset-0 -z-10">
           <Image
