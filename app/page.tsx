@@ -48,6 +48,20 @@ export default function Home() {
         {/* Rosy gradient overlay for mobile hero - like desktop version */}
         <div className="pointer-events-none absolute inset-0 hero-gradient-mask md:hidden" />
         
+        {/* Desktop / tablet hero background */}
+        <div className="hidden md:block pointer-events-none absolute inset-0 -z-10">
+          <Image
+            src="/evyra-fabric.jpg"
+            alt="Soft bridal fabric backdrop"
+            fill
+            priority
+            unoptimized
+            sizes="100vw"
+            className="object-cover hero-image"
+          />
+          <div className="absolute inset-0 hero-gradient-mask" />
+        </div>
+        
         {/* Minimal overlay for mobile hero */}
         <div className="hero-mobile-overlay pointer-events-none absolute inset-x-6 top-1/2 -translate-y-1/2 z-10 text-center md:hidden">
           <p className="text-xs uppercase tracking-[0.28em] text-white/90">
