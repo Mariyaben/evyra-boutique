@@ -59,6 +59,9 @@ export default function Home() {
           <div className="absolute inset-0 hero-gradient-mask" />
         </div>
         
+        {/* Smooth shadow transition at bottom of mobile hero */}
+        <div className="pointer-events-none absolute bottom-0 inset-x-0 h-48 bg-gradient-to-b from-transparent to-black/5 md:hidden" />
+        
         {/* Minimal overlay for mobile hero */}
         <div className="hero-mobile-overlay pointer-events-none absolute inset-x-6 top-1/2 -translate-y-1/2 z-10 text-center md:hidden">
           <div className="absolute inset-0 -z-10 hero-gradient-mask blur-2xl opacity-80" />
