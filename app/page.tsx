@@ -117,7 +117,7 @@ export default function Home() {
       </section>
 
       {/* Mobile-only couture fabric intro section */}
-      <section className="md:hidden bg-evyra-ivory/95 px-6 py-3">
+      <section className="md:hidden bg-evyra-ivory/95 px-6 py-1">
         <div className="space-y-2">
           <div className="space-y-3">
             <p className="text-xs uppercase tracking-[0.24em] text-evyra-forest/70">
